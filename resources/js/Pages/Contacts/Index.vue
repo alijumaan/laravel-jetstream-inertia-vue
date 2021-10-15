@@ -156,9 +156,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-* {
-    font-size: 14px;
-}
 table, thead, tbody, th, td, tr {
     padding: 5px 0 5px 0;
     margin: 0;

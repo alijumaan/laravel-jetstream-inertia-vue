@@ -148,9 +148,6 @@
 </script>
 
 <style scoped>
-* {
-    font-size: 12px;
-}
 table, thead, tbody, th, td, tr {
     padding: 5px 0 5px 0;
     margin: 0;

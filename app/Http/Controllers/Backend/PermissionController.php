@@ -17,6 +17,10 @@ class PermissionController extends Controller
     {
         $this->authorize('access_permission');
 
+        $request->validate([
+            'page' => ['numeric', 'min:1', 'max:1000']
+        ]);
+
         $pagination = 10;
         $page = 1;
 

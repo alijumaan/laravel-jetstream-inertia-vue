@@ -17,19 +17,11 @@ class PreventativeController extends Controller
 
         $userId = auth()->id();
 
-        $keyBuildingCount = auth()->user()->hasRole('admin') || auth()->user()->hasRole('supervisor') ? "buildings_count_${userId}" : 'buildings_count';
+        $keyBuildingCount = auth()->user()->hasRole('admin') ? "buildings_count_${userId}" : 'buildings_count';
         $buildings_count = Cache::get($keyBuildingCount);
 
         if (!$buildings_count) {
-            if (auth()->user()->hasRole('admin')) {
-                $buildings_count = Building::count();
-            }
-            elseif (auth()->user()->hasRole('supervisor')) {
-                $buildings_count = Building::whereStatus(1)->count();
-            }
-            else {
-                $buildings_count = Building::where('user_id', $userId)->count();
-            }
+            $buildings_count = auth()->user()->hasRole('admin') ? Building::count() : Building::where('user_id', $userId)->count();
             Cache::forever('buildings_count', $buildings_count);
         }
 
@@ -41,8 +33,7 @@ class PreventativeController extends Controller
 
         return Inertia::render('Preventative/Index', [
             'buildings_count' => $buildings_count,
-            'extinguishers_count' => $extinguishers_count,
-            'keyCount' => $keyBuildingCount
+            'extinguishers_count' => $extinguishers_count
         ]);
     }
 }

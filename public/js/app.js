@@ -26939,7 +26939,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, 8
       /* PROPS */
       , ["onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_danger_button, {
-        "class": "mr-2",
+        "class": "ml-2",
         onClick: _cache[1] || (_cache[1] = function ($event) {
           return _ctx.deleteContact(_ctx.contactId);
         })
@@ -27799,7 +27799,7 @@ var _hoisted_5 = {
 
 var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-    "class": "absolute inset-y-0 right-0 flex items-center pl-3"
+    "class": "absolute inset-y-0 right-0 flex items-center pr-3"
   }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
     "class": "w-5 h-5 text-gray-400",
     viewBox: "0 0 24 24",
@@ -27926,7 +27926,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         onKeyup: _cache[1] || (_cache[1] = function () {
           return _ctx.search && _ctx.search.apply(_ctx, arguments);
         }),
-        "class": "w-full mb-6 sm text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring",
+        "class": "w-full pr-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring",
         placeholder: "Search"
       }, null, 544
       /* HYDRATE_EVENTS, NEED_PATCH */
@@ -31600,7 +31600,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "font-semibold text-xl text-gray-800 leading-tight"
-}, " Items ", -1
+}, " Supply ", -1
 /* HOISTED */
 );
 
@@ -31661,7 +31661,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_app_layout, {
-    title: "التموين"
+    title: "Supply"
   }, {
     header: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_1];
@@ -34040,7 +34040,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-aa2b4242] {\n    font-size: 14px;\n}\ntable[data-v-aa2b4242], thead[data-v-aa2b4242], tbody[data-v-aa2b4242], th[data-v-aa2b4242], td[data-v-aa2b4242], tr[data-v-aa2b4242] {\n    padding: 5px 0 5px 0;\n    margin: 0;\n}\n.text-sm[data-v-aa2b4242] {\n    padding: 3px 1px 3px 2px;\n    margin: 2px;\n    font-size: 12px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-aa2b4242], thead[data-v-aa2b4242], tbody[data-v-aa2b4242], th[data-v-aa2b4242], td[data-v-aa2b4242], tr[data-v-aa2b4242] {\n    padding: 5px 0 5px 0;\n    margin: 0;\n}\n.text-sm[data-v-aa2b4242] {\n    padding: 3px 1px 3px 2px;\n    margin: 2px;\n    font-size: 12px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34088,7 +34088,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-1a0561c9] {\n    font-size: 12px;\n}\ntable[data-v-1a0561c9], thead[data-v-1a0561c9], tbody[data-v-1a0561c9], th[data-v-1a0561c9], td[data-v-1a0561c9], tr[data-v-1a0561c9] {\n    padding: 5px 0 5px 0;\n    margin: 0;\n}\n.sm[data-v-1a0561c9] {\n    padding: 6px 2px 5px 3px;\n    margin: 2px;\n    font-size: 9px;\n}\n.text-sm[data-v-1a0561c9] {\n    font-size: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-1a0561c9], thead[data-v-1a0561c9], tbody[data-v-1a0561c9], th[data-v-1a0561c9], td[data-v-1a0561c9], tr[data-v-1a0561c9] {\n    padding: 5px 0 5px 0;\n    margin: 0;\n}\n.sm[data-v-1a0561c9] {\n    padding: 6px 2px 5px 3px;\n    margin: 2px;\n    font-size: 9px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34184,7 +34184,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-dec4df68] {\n    font-size: 12px;\n}\ntable[data-v-dec4df68], thead[data-v-dec4df68], tbody[data-v-dec4df68], th[data-v-dec4df68], td[data-v-dec4df68], tr[data-v-dec4df68] {\n    padding: 5px 0 5px 0;\n    margin: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable[data-v-dec4df68], thead[data-v-dec4df68], tbody[data-v-dec4df68], th[data-v-dec4df68], td[data-v-dec4df68], tr[data-v-dec4df68] {\n    padding: 5px 0 5px 0;\n    margin: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

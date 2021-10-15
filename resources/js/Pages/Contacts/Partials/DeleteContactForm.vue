@@ -17,7 +17,7 @@
                     Cancel
                 </jet-secondary-button>
 
-                <jet-danger-button class="mr-2" @click="deleteContact(contactId)">
+                <jet-danger-button class="ml-2" @click="deleteContact(contactId)">
                     Delete
                 </jet-danger-button>
             </template>

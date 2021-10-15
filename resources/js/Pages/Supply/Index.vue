@@ -1,8 +1,8 @@
 <template>
-    <app-layout title="التموين">
+    <app-layout title="Supply">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Items
+                Supply
             </h2>
         </template>
         <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">

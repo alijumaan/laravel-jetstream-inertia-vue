@@ -18,6 +18,10 @@ class RoleController extends Controller
     {
         $this->authorize('access_role');
 
+        $request->validate([
+            'page' => ['numeric', 'min:1', 'max:1000']
+        ]);
+
         $pagination = 10;
         $page = 1;
 

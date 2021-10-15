@@ -10,7 +10,7 @@
                 <div class="card">
                     <create-building-form :periods="periods" :users="users"/>
                     <div class="relative w-full">
-                        <span class="absolute inset-y-0 right-0 flex items-center pl-3">
+                        <span class="absolute inset-y-0 right-0 flex items-center pr-3">
                             <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
                                 <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
@@ -18,7 +18,7 @@
                         <input type="text"
                                v-model="keyword"
                                @keyup="search"
-                               class="w-full mb-6 sm text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring"
+                               class="w-full pr-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring"
                                placeholder="Search">
                     </div>
                     <div class="flex flex-col">
@@ -153,9 +153,6 @@
 </script>
 
 <style scoped>
-* {
-    font-size: 12px;
-}
 table, thead, tbody, th, td, tr {
     padding: 5px 0 5px 0;
     margin: 0;
@@ -164,8 +161,5 @@ table, thead, tbody, th, td, tr {
     padding: 6px 2px 5px 3px;
     margin: 2px;
     font-size: 9px;
-}
-.text-sm {
-    font-size: 10px;
 }
 </style>
