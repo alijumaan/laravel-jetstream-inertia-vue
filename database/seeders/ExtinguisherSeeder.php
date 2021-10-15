@@ -15,23 +15,23 @@ class ExtinguisherSeeder extends Seeder
     public function run()
     {
         Extinguisher::create([
-            'type' => 'ماء',
-            'slug' => 'ماء',
+            'type' => 'water',
+            'slug' => 'water',
         ]);
 
         Extinguisher::create([
-            'type' => 'رغوة',
-            'slug' => 'رغوة',
+            'type' => 'foam',
+            'slug' => 'foam',
         ]);
 
         Extinguisher::create([
-            'type' => 'بودرة',
-            'slug' => 'بودرة',
+            'type' => 'powder',
+            'slug' => 'powder',
         ]);
 
         Extinguisher::create([
-            'type' => 'ثاني اكسيد الكربون',
-            'slug' => 'ثاني-اكسيد-الكربون',
+            'type' => 'co2',
+            'slug' => 'co2',
         ]);
     }
 }

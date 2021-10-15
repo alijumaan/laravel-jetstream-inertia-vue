@@ -5,20 +5,20 @@
         </button>
         <jet-dialog-modal :show="showModal" :max-width="'sm'" @close="closeModal">
             <template #title>
-                هل انت متاكد ارجاع الطفاية لمبنى ({{ buildingName }})؟
+                Are you sure to return the extinguisher to a building ({{ buildingName }})?
             </template>
 
             <template #content>
-                <span class="text-red-700">لن تستطيع التراجع بعد التنفيذ</span>
+                <span class="text-red-700">You cannot undo after execution</span>
             </template>
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
-                <jet-danger-button class="mr-2" @click="returnExtinguisherToBuilding(extinguisherId, buildingId)">
-                    حذف
+                <jet-danger-button class="ml-2" @click="returnExtinguisherToBuilding(extinguisherId, buildingId)">
+                    Delete
                 </jet-danger-button>
             </template>
         </jet-dialog-modal>
@@ -58,7 +58,7 @@
                         this.closeModal()
                         Toast.fire({
                             icon: 'success',
-                            title: 'تم ارجاع الطفاية الى المبنى بنجاح'
+                            title: 'Return extinguisher successfully'
                         })
                     },
                 })

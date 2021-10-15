@@ -17,6 +17,6 @@ class Contact extends Model
 
     public function getIsReadAttribute()
     {
-        return $this->attributes['is_read'] == 0 ? 'جديد' : 'مقروء';
+        return $this->attributes['is_read'] == 0 ? 'New' : 'Read';
     }
 }

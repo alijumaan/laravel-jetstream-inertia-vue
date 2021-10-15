@@ -5,20 +5,20 @@
         </button>
         <jet-dialog-modal :show="showModal" :max-width="'sm'" @close="closeModal">
             <template #title>
-                هل تريد بالتأكيد حذف ({{ permissionName }})؟
+                Are you sure to delete ({{ permissionName }})?
             </template>
 
             <template #content>
-                <span class="text-red-700">لن تستطيع استعادة الصلاحية بعد حذفها</span>
+                <span class="text-red-700">You will not be able to restore the validity after deleting it</span>
             </template>
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
-                <jet-danger-button class="mr-2" @click="deletePermission(permissionId)">
-                    حذف
+                <jet-danger-button class="ml-2" @click="deletePermission(permissionId)">
+                    Delete
                 </jet-danger-button>
             </template>
         </jet-dialog-modal>
@@ -58,7 +58,7 @@
                         this.closeModal()
                         Toast.fire({
                             icon: 'success',
-                            title: 'تم حذف الصلاحية بنجاح'
+                            title: 'Permission deleted successfully'
                         })
                     }
                 })

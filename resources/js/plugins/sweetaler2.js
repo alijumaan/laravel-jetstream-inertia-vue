@@ -2,7 +2,7 @@ import Swal from 'sweetalert2'
 window.Swal = Swal;
 
 const Toast = Swal.mixin({
-    toast: true,
+    toast: false,
     position: 'top-start',
     showConfirmButton: false,
     timer: 1500,

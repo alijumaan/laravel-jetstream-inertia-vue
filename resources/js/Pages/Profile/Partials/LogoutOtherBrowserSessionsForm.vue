@@ -1,16 +1,16 @@
 <template>
     <jet-action-section>
         <template #title>
-            جلسات المتصفح
+            Browser sessions
         </template>
 
         <template #description>
-            إدارة جلساتك النشطة وتسجيل الخروج منها على متصفحات وأجهزة أخرى
+            Manage and log out of your active sessions on other browsers and devices
         </template>
 
         <template #content>
             <div class="max-w-xl text-sm text-gray-600">
-                إذا لزم الأمر ، يمكنك تسجيل الخروج من جميع جلسات المتصفح الأخرى عبر جميع أجهزتك. بعض جلساتك الأخيرة مذكورة أدناه ؛ ومع ذلك ، قد لا تكون هذه القائمة شاملة. إذا شعرت أنه تم اختراق حسابك ، يجب عليك أيضًا تحديث كلمة المرور الخاصة بك
+                If necessary, you can log out of all other browser sessions across all your devices. Some of your recent sessions are listed below; However, this list may not be exhaustive. If you feel that your account has been hacked, you should also update your password
             </div>
 
             <!-- Other Browser Sessions -->
@@ -45,25 +45,25 @@
 
             <div class="flex items-center mt-5">
                 <jet-button @click="confirmLogout">
-                    تسجيل الخروج جلسات المتصفح الأخرى
+                    Sign out other browser sessions
                 </jet-button>
 
                 <jet-action-message :on="form.recentlySuccessful" class="ml-3">
-                    تم
+                    Done
                 </jet-action-message>
             </div>
 
             <!-- Log Out Other Devices Confirmation Modal -->
             <jet-dialog-modal :show="confirmingLogout" @close="closeModal">
                 <template #title>
-                    تسجيل الخروج جلسات المتصفح الأخرى
+                    Sign out other browser sessions
                 </template>
 
                 <template #content>
-                    الرجاء إدخال كلمة المرور الخاصة بك لتأكيد رغبتك في تسجيل الخروج من جلسات المتصفح الأخرى عبر جميع أجهزتك
+                    Please enter your password to confirm that you want to log out of other browser sessions across all your devices
 
                     <div class="mt-4">
-                        <jet-input type="password" class="mt-1 block w-3/4" placeholder="كلمة المرور"
+                        <jet-input type="password" class="mt-1 block w-3/4" placeholder="Password"
                                     ref="password"
                                     v-model="form.password"
                                     @keyup.enter="logoutOtherBrowserSessions" />
@@ -74,11 +74,11 @@
 
                 <template #footer>
                     <jet-secondary-button @click="closeModal">
-                        الغاء
+                        Cancel
                     </jet-secondary-button>
 
-                    <jet-button class="mr-2" @click="logoutOtherBrowserSessions" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                        تسجيل الخروج جلسات المتصفح الأخرى
+                    <jet-button class="ml-2" @click="logoutOtherBrowserSessions" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                        Sign out other browser sessions
                     </jet-button>
                 </template>
             </jet-dialog-modal>

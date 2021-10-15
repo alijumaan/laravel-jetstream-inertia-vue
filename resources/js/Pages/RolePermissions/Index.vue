@@ -1,13 +1,13 @@
 <template>
-    <app-layout title="الصلاحيات">
+    <app-layout title="Permissions">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                تعيين الصلاحيات
+                Assign permissions
             </h2>
         </template>
         <section class="relative w-full max-w-md px-5 py-4 mx-auto rounded-md">
             <select v-model="roleId" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full">
-                <option value="">الدور</option>
+                <option value="">-- Role --</option>
                 <option v-for="role in roles.data" :value="role.id">
                     {{ role.name }}
                 </option>

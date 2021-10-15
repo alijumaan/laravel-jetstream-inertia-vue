@@ -1,8 +1,8 @@
 <template>
-    <app-layout title="المباني">
+    <app-layout title="Buildings">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                المباني
+                Buildings
             </h2>
         </template>
         <div class="justify-center items-center h-full">
@@ -10,7 +10,7 @@
                 <div class="card">
                     <create-building-form :periods="periods" :users="users"/>
                     <div class="relative w-full">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                        <span class="absolute inset-y-0 right-0 flex items-center pl-3">
                             <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
                                 <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
@@ -19,26 +19,26 @@
                                v-model="keyword"
                                @keyup="search"
                                class="w-full mb-6 sm text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-500 focus:outline-none focus:ring"
-                               placeholder="   البحث   ">
+                               placeholder="Search">
                     </div>
                     <div class="flex flex-col">
                         <div class="-my-2 overflow-x-auto">
                             <div class="py-2 align-middle inline-block min-w-full ">
                                 <div class="sm shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                    <table class="min-w-full divide-y text-right divide-gray-200">
+                                    <table class="min-w-full divide-y text-left divide-gray-200">
                                         <thead class="bg-gray-50">
                                         <tr>
-                                            <th scope="col" class="text-center py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                المبنى
+                                            <th scope="col" class="text-left py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Building
                                             </th>
-                                            <th scope="col" class=" py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                تاريخ الانتهاء
+                                            <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Expiry date
                                             </th>
-                                            <th scope="col" class=" py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                الحالة
+                                            <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Status
                                             </th>
-                                            <th scope="col" class=" py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                الإجراء
+                                            <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Action
                                             </th>
                                         </tr>
                                         </thead>
@@ -71,7 +71,6 @@
                                                     <div :class="new Date(building.checked_at ).getTime() > new Date().getTime()
                                                                  ? 'text-sm text-green-500'
                                                                  :  'text-sm text-red-500'">
-                                                        <span>{{ new Date(building.checked_at ).getTime() > new Date().getTime() ? 'باقي له' : 'منتهي' }}</span>
                                                         {{ building.checked_at_string }}
                                                     </div>
                                                 </div>
@@ -80,7 +79,7 @@
                                               <span :class="building.status === 0
                                                         ? 'inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800'
                                                         : 'inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'">
-                                                {{ building.status === 0 ? 'منتهي' : 'مشيك' }}
+                                                {{ building.status === 0 ? 'Inactive' : 'Active'}}
                                               </span>
                                             </td>
                                             <td class="whitespace-nowrap text-sm font-medium justify-between">
@@ -88,7 +87,7 @@
                                             </td>
                                         </tr>
                                         <tr v-else>
-                                            <td colspan="4" class=" py-3 text-center">لاتوجد مباني</td>
+                                            <td colspan="4" class=" py-3 text-center">No building found.</td>
                                         </tr>
                                         </tbody>
                                     </table>

@@ -11,7 +11,7 @@
                     <h6 class="text-blueGray-700 text-xl font-bold">
                     </h6>
                     <Link :href="route('users.index')">
-                        <jet-button >الغاء</jet-button>
+                        <jet-button >Cancel</jet-button>
                     </Link>
                 </div>
             </div>

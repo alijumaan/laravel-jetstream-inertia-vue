@@ -18,32 +18,32 @@
                             <!-- Navigation Links -->
                             <div class="mr-6 hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('preventatives.index')" :active="route().current('preventatives.index')">
-                                    الوقاية
+                                    Preventative
                                 </jet-nav-link>
                             </div>
                             <div v-if="$page.props.is_admin" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('supplies.index')" :active="route().current('supplies.index')">
-                                    التموين
+                                    Supply
                                 </jet-nav-link>
                             </div>
                             <div v-if="$page.props.is_admin" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('permissions.index')" :active="route().current('permissions.index')">
-                                    الصلاحيات
+                                    Permission
                                 </jet-nav-link>
                             </div>
                             <div v-if="$page.props.is_admin" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('roles.index')" :active="route().current('roles.index')">
-                                    الوظيفة
+                                    Role
                                 </jet-nav-link>
                             </div>
                             <div v-if="$page.props.is_admin" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('role_permissions.roles')" :active="route().current('role_permissions.roles')">
-                                    صلاحيات الوظيفة
+                                    Role permissions
                                 </jet-nav-link>
                             </div>
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('contacts.index')" :active="route().current('contacts.index')">
-                                    تواصل معنا
+                                    Contact
                                 </jet-nav-link>
                             </div>
                         </div>
@@ -69,23 +69,23 @@
                                             <!-- Team Management -->
                                             <template v-if="$page.props.jetstream.hasTeamFeatures">
                                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                                    ادارة الفريق
+                                                    Team management
                                                 </div>
 
                                                 <!-- Team Settings -->
                                                 <jet-dropdown-link :href="route('teams.show', $page.props.user.current_team)">
-                                                    اعدادات الفريق
+                                                    Team settings
                                                 </jet-dropdown-link>
 
                                                 <jet-dropdown-link :href="route('teams.create')" v-if="$page.props.jetstream.canCreateTeams">
-                                                    انشاء فريق
+                                                    Create team
                                                 </jet-dropdown-link>
 
                                                 <div class="border-t border-gray-100"></div>
 
                                                 <!-- Team Switcher -->
                                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                                    تبديل الفريق
+                                                    Team switch
                                                 </div>
 
                                                 <template v-for="team in $page.props.user.all_teams" :key="team.id">
@@ -106,7 +106,7 @@
 
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
-                                <jet-dropdown align="left" width="48">
+                                <jet-dropdown align="right" width="48">
                                     <template #trigger>
                                         <button v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                             <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
@@ -126,11 +126,11 @@
                                     <template #content>
                                         <!-- Account Management -->
                                         <div class="block px-4 py-2 text-xs text-gray-400">
-                                            إدارة الحساب
+                                            Account management
                                         </div>
 
                                         <jet-dropdown-link :href="route('profile.show')">
-                                            الصفحة الشخصية
+                                            Profile
                                         </jet-dropdown-link>
 
                                         <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
@@ -142,7 +142,7 @@
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <jet-dropdown-link as="button">
-                                                خروج
+                                                Logout
                                             </jet-dropdown-link>
                                         </form>
                                     </template>
@@ -166,7 +166,7 @@
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
                         <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                            لوحة التحكم
+                            Dashboard
                         </jet-responsive-nav-link>
                     </div>
 
@@ -185,19 +185,19 @@
 
                         <div class="mt-3 space-y-1">
                             <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
-                                الصفحة الشخصية
+                                Profile
                             </jet-responsive-nav-link>
                             <jet-responsive-nav-link v-if="$page.props.is_admin" :href="route('permissions.index')" :active="route().current('permissions.index')">
-                                الصلاحيات
+                                Permission
                             </jet-responsive-nav-link>
                             <jet-responsive-nav-link v-if="$page.props.is_admin" :href="route('roles.index')" :active="route().current('roles.index')">
-                                الوظيفة
+                                Role
                             </jet-responsive-nav-link>
                             <jet-responsive-nav-link v-if="$page.props.is_admin" :href="route('role_permissions.roles')" :active="route().current('role_permissions.roles')">
-                                صلاحيات الوظيفة
+                                Role permissions
                             </jet-responsive-nav-link>
                             <jet-responsive-nav-link :href="route('contacts.index')" :active="route().current('contacts.index')">
-                                تواصل معنا
+                                Contact
                             </jet-responsive-nav-link>
 
                             <jet-responsive-nav-link :href="route('api-tokens.index')" :active="route().current('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
@@ -207,7 +207,7 @@
                             <!-- Authentication -->
                             <form method="POST" @submit.prevent="logout">
                                 <jet-responsive-nav-link as="button">
-                                    خروج
+                                    Logout
                                 </jet-responsive-nav-link>
                             </form>
 
@@ -216,16 +216,16 @@
                                 <div class="border-t border-gray-200"></div>
 
                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                    إدارة الفريق
+                                    Team management
                                 </div>
 
                                 <!-- Team Settings -->
                                 <jet-responsive-nav-link :href="route('teams.show', $page.props.user.current_team)" :active="route().current('teams.show')">
-                                    اعدادات الفريق
+                                    Team settings
                                 </jet-responsive-nav-link>
 
                                 <jet-responsive-nav-link :href="route('teams.create')" :active="route().current('teams.create')" v-if="$page.props.jetstream.canCreateTeams">
-                                    انشاء فريق
+                                    Create team
                                 </jet-responsive-nav-link>
 
                                 <div class="border-t border-gray-200"></div>

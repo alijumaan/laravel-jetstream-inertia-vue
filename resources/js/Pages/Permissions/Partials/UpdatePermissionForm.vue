@@ -6,12 +6,12 @@
 
         <jet-dialog-modal :show="showModal" :max-width="'lg'" @close="closeModal">
             <template #title>
-                تعديل {{ form.name }}
+                Edit {{ form.name }}
             </template>
 
             <template #content>
                 <div class="mt-4">
-                    <jet-input type="text" class="mt-1 block w-full" placeholder="الاسم"
+                    <jet-input type="text" class="mt-1 block w-full" placeholder="Name"
                                ref="name"
                                v-model="form.name"
                                @keyup.enter="updatePermission" />
@@ -22,11 +22,11 @@
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
-                <jet-button class="mr-2" @click="updatePermission" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    تعديل
+                <jet-button class="ml-2" @click="updatePermission" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Update
                 </jet-button>
             </template>
         </jet-dialog-modal>
@@ -74,7 +74,7 @@ export default defineComponent({
                     this.closeModal()
                     Toast.fire({
                         icon: 'success',
-                        title: 'تم تعديل الصلاحية بنجاح'
+                        title: 'The permission has been updated successfully'
                     })
                 },
                 onError: () => this.$refs.name.focus(),

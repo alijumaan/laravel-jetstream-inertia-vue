@@ -1,8 +1,8 @@
 <template>
-    <app-layout title="الصلاحيات">
+    <app-layout title="Permissions">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                الصلاحيات
+                Permissions
             </h2>
         </template>
         <div class="justify-center items-center h-full">
@@ -13,15 +13,15 @@
                         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                    <table class="min-w-full divide-y divide-gray-200 text-right">
+                                    <table class="min-w-full divide-y divide-gray-200 text-left">
                                         <thead class="bg-gray-50">
                                         <tr>
                                             <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                الصلاحية
+                                                Permission
                                             </th>
                                             <th></th>
                                             <th class="text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                الإجراء
+                                                Action
                                             </th>
                                         </tr>
                                         </thead>
@@ -42,7 +42,7 @@
                                             </td>
                                         </tr>
                                         <tr v-else>
-                                            <td colspan="4" class="px-6 py-3 text-center">لاتوجد صلاحيات</td>
+                                            <td colspan="4" class="px-6 py-3 text-center">No permission found.</td>
                                         </tr>
                                         </tbody>
                                     </table>

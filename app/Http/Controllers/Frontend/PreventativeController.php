@@ -7,10 +7,11 @@ use App\Models\Building;
 use App\Models\Extinguisher;
 use Illuminate\Support\Facades\Cache;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class PreventativeController extends Controller
 {
-    public function __invoke(): \Inertia\Response
+    public function __invoke(): Response
     {
         $this->authorize('Access preventative');
 

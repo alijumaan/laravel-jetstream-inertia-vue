@@ -5,10 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class SupplyController extends Controller
 {
-    public function __invoke(): \Inertia\Response
+    public function __invoke(): Response
     {
         $this->authorize('Access supply');
 

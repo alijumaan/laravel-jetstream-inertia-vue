@@ -16,26 +16,26 @@
                                             <h6 class="text-blueGray-700 text-xl font-bold">
                                             </h6>
                                             <Link :href="route('buildings.index')">
-                                                <jet-button class="mb-4">عودة</jet-button>
+                                                <jet-button class="mb-4">Back</jet-button>
                                             </Link>
                                         </div>
                                         <table class="min-w-full divide-y divide-gray-200">
                                             <thead class="bg-gray-50">
                                             <tr>
                                                 <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    المبنى
+                                                    Building
                                                 </th>
                                                 <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    المفتش
+                                                    Inspector
                                                 </th>
                                                 <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    تاريخ الانتهاء
+                                                    Expiry date
                                                 </th>
                                                 <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    الحالة
+                                                    Status
                                                 </th>
                                                 <th colspan="2" class="text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    <span class="">الاجراءات</span>
+                                                    <span class="">Action</span>
                                                 </th>
                                                 <th></th>
                                             </tr>
@@ -71,7 +71,6 @@
                                                         <div :class="new Date(building.checked_at ).getTime() > new Date().getTime()
                                                                  ? 'text-small text-green-500'
                                                                  :  'text-small text-red-500'">
-                                                            <span class="">{{ new Date(building.checked_at ).getTime() > new Date().getTime() ? 'باقي له ' : 'منتهي '}}</span>
                                                             <span class="">{{ building.checked_at_string }}</span>
                                                         </div>
                                                     </div>
@@ -80,7 +79,7 @@
                                               <span :class="building.status === 0
                                                         ? ' inline-flex text-small leading-5 font-semibold rounded-full bg-red-100 text-red-800'
                                                         : ' inline-flex text-small leading-5 font-semibold rounded-full bg-green-100 text-green-800'">
-                                                {{ building.status === 0 ? 'منتهي' : 'مشيك' }}
+                                                {{ building.status === 0 ? 'Inactive' : 'Active'}}
                                               </span>
                                                 </td>
                                                 <td class="whitespace-nowrap text-center text-sm font-medium justify-between">
@@ -94,7 +93,7 @@
                                         </table>
                                     </div>
                                     <div class="mt-3">
-                                        <h6>الملاحظات</h6>
+                                        <h6>Notes</h6>
                                         <p>{{ building.notes}}</p>
                                     </div>
                                 </div>

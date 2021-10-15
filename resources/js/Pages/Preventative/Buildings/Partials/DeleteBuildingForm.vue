@@ -5,20 +5,20 @@
         </button>
         <jet-dialog-modal :show="showModal" :max-width="'sm'" @close="closeModal">
             <template #title>
-                هل تريد بالتأكيد حذف ({{ buildingName }})؟
+                Are you sure want to delete ({{ buildingName }})?
             </template>
 
             <template #content>
-                <span class="text-red-700">لن تستطيع استعادة الدور بعد حذفه</span>
+                <span class="text-red-700">You will not be able to restore the role after deleting it</span>
             </template>
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
                 <jet-danger-button class="mr-2" @click="deleteBuilding(buildingSlug)">
-                    حذف
+                    Delete
                 </jet-danger-button>
             </template>
         </jet-dialog-modal>
@@ -58,7 +58,7 @@
                         this.closeModal()
                         Toast.fire({
                             icon: 'success',
-                            title: 'تم حذف المبنى بنجاح'
+                            title: 'The building deleted successfully'
                         })
                     },
                 })

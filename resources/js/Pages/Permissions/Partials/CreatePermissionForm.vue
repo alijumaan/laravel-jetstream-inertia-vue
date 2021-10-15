@@ -3,24 +3,24 @@
         <div class="text-center flex justify-between">
             <span class="text-blueGray-700 text-xl font-bold">
                 <jet-button @click="confirmShow">
-                انشاء صلاحية
+                    New permission
                 </jet-button>
             </span>
             <Link :href="route('dashboard')">
-                <jet-button class="mb-4">الرئيسية</jet-button>
+                <jet-button class="mb-4">Home</jet-button>
             </Link>
         </div>
 
         <jet-dialog-modal :show="showModal" :max-width="'lg'" @close="closeModal">
             <template #title>
-                انشاء جديد
+                Create
             </template>
 
             <template #content>
-                <small>انشاء صلاحية جديدة</small>
+                <small>Create new permission</small>
 
                 <div class="mt-3">
-                    <jet-input type="text" class="mt-1 block w-full" placeholder="الاسم"
+                    <jet-input type="text" class="mt-1 block w-full" placeholder="Name"
                                ref="name"
                                v-model="form.name"
                                @keyup.enter="savePermission" />
@@ -30,11 +30,11 @@
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
-                <jet-button class="mr-2" @click="savePermission" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    حفظ
+                <jet-button class="ml-2" @click="savePermission" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Save
                 </jet-button>
             </template>
         </jet-dialog-modal>
@@ -80,7 +80,7 @@ export default defineComponent({
                     this.closeModal()
                     Toast.fire({
                         icon: 'success',
-                        title: 'تم انشاء الصلاحية بنجاح'
+                        title: 'The permission has been created successfully '
                     })
                 },
                 onError: () => this.$refs.name.focus(),

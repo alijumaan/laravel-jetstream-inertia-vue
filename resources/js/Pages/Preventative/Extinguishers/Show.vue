@@ -2,7 +2,7 @@
     <app-layout title="Extinguishers">
             <template #header>
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    طفاية ({{ extinguisher.data.type }})
+                    Extinguisher ({{ extinguisher.data.type }})
                 </h2>
             </template>
             <div class="justify-center items-center h-full">
@@ -16,20 +16,20 @@
                                             <h6 class="text-blueGray-700 text-xl font-bold">
                                             </h6>
                                             <Link :href="route('extinguishers.index')">
-                                                <jet-button class="mb-4">عودة</jet-button>
+                                                <jet-button class="mb-4">Back</jet-button>
                                             </Link>
                                         </div>
-                                        <table class="min-w-full divide-y divide-gray-200 text-right">
+                                        <table class="min-w-full divide-y divide-gray-200 text-center">
                                             <thead class="bg-gray-50">
                                             <tr>
                                                 <th scope="col" class=" py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    النوع
+                                                    Type
                                                 </th>
                                                 <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    العدد
+                                                    Count
                                                 </th>
                                                 <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    المبنى
+                                                    Buildings
                                                 </th>
                                             </tr>
                                             </thead>
@@ -52,7 +52,7 @@
                                                         />
                                                     </span>
                                                     <span v-else >
-                                                        لاتوجد مباني مسحوب طفاياتها
+                                                        There are no buildings whose extinguishers have been pulled out
                                                     </span>
                                                 </td>
                                             </tr>

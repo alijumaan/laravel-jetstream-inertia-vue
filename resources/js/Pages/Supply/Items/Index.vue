@@ -1,48 +1,48 @@
 <template>
-    <app-layout title="الاصناف">
+    <app-layout title="Items">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                الاصناف
+                Items
             </h2>
         </template>
         <div class="justify-center items-center h-full">
             <div class="mx-3 my-20">
                 <div class="card">
-                    <div class="text-right flex justify-between">
+                    <div class="text-left flex justify-between">
                         <Link :href="route('items.create')">
-                            <jet-button class="mb-4">انشاء صنف</jet-button>
+                            <jet-button class="mb-4">Create new item</jet-button>
                         </Link>
                         <Link :href="route('items.print')">
-                            <jet-button class="mb-4 bg-green-700">طباعة</jet-button>
+                            <jet-button class="mb-4 bg-green-700">Print</jet-button>
                         </Link>
                         <Link :href="route('supplies.index')">
-                            <jet-button class="mb-4">عودة</jet-button>
+                            <jet-button class="mb-4">Back</jet-button>
                         </Link>
                     </div>
                     <div class="flex flex-col">
                         <div class="-my-2 overflow-x-auto ">
                             <div class="py-2 align-middle inline-block min-w-full">
                                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                    <table class="min-w-full divide-y text-right divide-gray-200">
+                                    <table class="min-w-full divide-y text-left divide-gray-200">
                                         <thead class="bg-gray-50">
                                         <tr>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 #
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                التسمية
+                                                Nomenclature
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                المقاس
+                                                Size
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                الكمية
+                                                Qty
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                المعرف
+                                                SKU
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                الإجراء
+                                                Action
                                             </th>
                                         </tr>
                                         </thead>
@@ -85,12 +85,12 @@
                                                     <i class="fa fa-edit"></i>
                                                 </Link>
                                                 <button @click="deleteItem(item.id)" class="text-red-700 hover:text-indigo-900">
-                                                    <i class="fa fa-trash mr-3"></i>
+                                                    <i class="fa fa-trash ml-3"></i>
                                                 </button>
                                             </td>
                                         </tr>
                                         <tr v-else>
-                                            <td colspan="4" class=" py-3 text-center">لاتوجد اصناف</td>
+                                            <td colspan="4" class=" py-3 text-center">No items found.</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -134,7 +134,7 @@
         },
         methods: {
             deleteItem(itemId) {
-                if(confirm("هل انت متاكد من حذف الصنف؟")) {
+                if(confirm("Are you sure to delete?")) {
                     axios.delete(`items/${itemId}`).then(response => {
 
                         return this.$inertia.reload();

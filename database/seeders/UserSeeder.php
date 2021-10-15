@@ -53,5 +53,7 @@ class UserSeeder extends Seeder
         $supervisor->assignRole('supervisor');
         $inspector->assignRole('inspector');
         $supply->assignRole('supply');
+
+        User::factory(10)->create();
     }
 }

@@ -5,7 +5,7 @@
     <jet-authentication-card class="px-8">
         <template #logo>
             <Link :href="route('dashboard')" class="text-1xl">
-                <jet-button>عودة الى الصفحة الرئيسية</jet-button>
+                <jet-button>Back to the home page</jet-button>
             </Link>
         </template>
 
@@ -17,29 +17,29 @@
 
         <form @submit.prevent="submit">
             <div>
-                <jet-label for="username" value="اسم المستخدم او البريد الإلكتروني" />
+                <jet-label for="username" value="Email Or Username" />
                 <jet-input id="username" type="text" class="mt-1 block w-full" v-model="form.username" autofocus />
             </div>
 
             <div class="mt-4">
-                <jet-label for="password" value="الرقم السري" />
+                <jet-label for="password" value="Password" />
                 <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
                 <label class="flex items-center">
                     <jet-checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="mr-2 text-sm text-gray-600">تذكرني</span>
+                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="ml-3 underline text-sm text-gray-600 hover:text-gray-900">
-                    نسيت كلمة المرور؟
+                <Link v-if="canResetPassword" :href="route('password.request')" class="mr-3 underline text-sm text-gray-600 hover:text-gray-900">
+                    Forgot password?
                 </Link>
 
-                <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    دخول
+                <jet-button class="mr-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Login
                 </jet-button>
             </div>
         </form>

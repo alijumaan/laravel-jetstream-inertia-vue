@@ -1,9 +1,9 @@
 <template>
     <div class="justify-center items-center h-full">
-            <div class="px-8 pt-5 text-right flex justify-between">
+            <div class="px-8 pt-5 text-left flex justify-between">
                 <jet-button onclick="window.print();" class="bg-green-700">طباعة</jet-button>
                 <Link :href="route('items.index')">
-                    <jet-button>عودة</jet-button>
+                    <jet-button>Back</jet-button>
                 </Link>
             </div>
             <div class="mx-3">
@@ -12,30 +12,30 @@
                         <div class="px-3 my-2 overflow-x-auto ">
                             <div class="py-2 align-middle inline-block min-w-full">
                                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                    <table class="min-w-full divide-y text-right divide-gray-200 print-container">
+                                    <table class="min-w-full divide-y text-left divide-gray-200 print-container">
                                         <thead class="bg-gray-50">
                                         <tr>
-                                            <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th scope="col" class="px-3 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 #
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                التسمية
+                                                Nomenclature
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                المقاس
+                                                Size
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                الكمية
+                                                Quantity
                                             </th>
                                             <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                المعرف
+                                                SKU
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody class="bg-white divide-y divide-gray-200">
                                         <tr v-if="items.length > 0" v-for="(item, index) in items" :key="item.id">
                                             <td class=" whitespace-nowrap">
-                                                <span class="pr-1 inline-flex text-xs leading-5 font-semibold rounded-full">
+                                                <span class="pl-3 inline-flex text-xs leading-5 font-semibold rounded-full">
                                                     {{ index + 1 }}
                                                 </span>
                                             </td>
@@ -66,9 +66,6 @@
                                                 {{ item.sku }}
                                               </span>
                                             </td>
-                                        </tr>
-                                        <tr v-else>
-                                            <td colspan="4" class=" py-3 text-center">لاتوجد اصناف</td>
                                         </tr>
                                         </tbody>
                                     </table>

@@ -5,20 +5,20 @@
         </button>
         <jet-dialog-modal :show="showModal" :max-width="'sm'" @close="closeModal">
             <template #title>
-                هل تريد بالتأكيد حذف ({{ roleName }})؟
+                Are you sure want to delete ({{ roleName }})?
             </template>
 
             <template #content>
-                <span class="text-red-700">لن تستطيع استعادة الدور بعد حذفه</span>
+                <span class="text-red-700">You will not be able to restore the role after deleting it</span>
             </template>
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
-                <jet-danger-button class="mr-2" @click="deleteRole(roleId)">
-                    حذف
+                <jet-danger-button class="ml-2" @click="deleteRole(roleId)">
+                    Delete
                 </jet-danger-button>
             </template>
         </jet-dialog-modal>
@@ -59,7 +59,7 @@
                     onFinish: () => {
                         Toast.fire({
                             icon: 'success',
-                            title: 'تم حذف الدور بنجاح'
+                            title: 'The deleted successfully'
                         })
                     },
                 })

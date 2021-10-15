@@ -1,25 +1,25 @@
 <template>
     <jet-action-section>
         <template #title>
-            توثيق الثنائي
+            Binary documentation
         </template>
 
         <template #description>
-            أضف أمانًا إضافيًا إلى حسابك باستخدام المصادقة الثنائية
+            Add extra security to your account with two-factor authentication
         </template>
 
         <template #content>
             <h3 class="text-lg font-medium text-gray-900" v-if="twoFactorEnabled">
-                لقد قمت بتمكين المصادقة الثنائية
+                You have enabled two-factor authentication
             </h3>
 
             <h3 class="text-lg font-medium text-gray-900" v-else>
-                لم تقم بتمكين المصادقة الثنائية
+                You have not enabled two-factor authentication
             </h3>
 
             <div class="mt-3 max-w-xl text-sm text-gray-600">
                 <p>
-                    عند تمكين المصادقة الثنائية ، ستتم مطالبتك برمز مميز آمن وعشوائي أثناء المصادقة. يمكنك استرداد هذا الرمز المميز من تطبيق Google Authenticator بهاتفك
+                    When two-factor authentication is enabled, you will be prompted for a secure, random token during authentication. You can redeem this token from the Google Authenticator app on your phone
                 </p>
             </div>
 
@@ -27,7 +27,7 @@
                 <div v-if="qrCode">
                     <div class="mt-4 max-w-xl text-sm text-gray-600">
                         <p class="font-semibold">
-                            تم تمكين المصادقة الثنائية الآن. امسح رمز الاستجابة السريعة التالي ضوئيًا باستخدام تطبيق المصادقة بهاتفك
+                            Two-factor authentication is now enabled. Scan the following QR code with your phone's authentication app
                         </p>
                     </div>
 
@@ -38,7 +38,7 @@
                 <div v-if="recoveryCodes.length > 0">
                     <div class="mt-4 max-w-xl text-sm text-gray-600">
                         <p class="font-semibold">
-                            قم بتخزين رموز الاسترداد هذه في مدير كلمات مرور آمن. يمكن استخدامها لاستعادة الوصول إلى حسابك في حالة فقد جهاز المصادقة الثنائية الخاص بك
+                            Store these recovery codes in a secure password manager. Can be used to regain access to your account if your two-factor authentication device is lost
                         </p>
                     </div>
 

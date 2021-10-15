@@ -5,20 +5,20 @@
         </button>
         <jet-dialog-modal :show="showModal" :max-width="'sm'" @close="closeModal">
             <template #title>
-                هل تريد بالتأكيد حذف رسالة ({{ contactName }})؟
+                Are you sure you want to delete a message ({{ contactName }})؟
             </template>
 
             <template #content>
-                <span class="text-red-700">لن تستطيع استعادة الرسالة بعد حذفها</span>
+                <span class="text-red-700">You will not be able to recover the message after deleting it</span>
             </template>
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
                 <jet-danger-button class="mr-2" @click="deleteContact(contactId)">
-                    حذف
+                    Delete
                 </jet-danger-button>
             </template>
         </jet-dialog-modal>
@@ -58,7 +58,7 @@
                         this.closeModal()
                         Toast.fire({
                             icon: 'success',
-                            title: 'تم حذف الرسالة بنجاح'
+                            title: 'The message has been deleted successfully'
                         })
                     }
                 })

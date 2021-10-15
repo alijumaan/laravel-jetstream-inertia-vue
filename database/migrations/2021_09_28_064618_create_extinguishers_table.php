@@ -16,7 +16,7 @@ class CreateExtinguishersTable extends Migration
         Schema::create('extinguishers', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->unique();
-            $table->enum('type', ['ماء', 'رغوة','بودرة','ثاني اكسيد الكربون']);
+            $table->enum('type', ['water', 'foam','powder','co2']);
             $table->string('notes')->nullable();
             $table->timestamps();
             $table->softDeletes();

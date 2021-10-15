@@ -15,7 +15,7 @@
                             </Link>
                         </h6>
                         <Link :href="route('supplies.index')">
-                            <jet-button class="mb-4">عودة</jet-button>
+                            <jet-button class="mb-4">Back</jet-button>
                         </Link>
                     </div>
                     <div class="flex flex-col">

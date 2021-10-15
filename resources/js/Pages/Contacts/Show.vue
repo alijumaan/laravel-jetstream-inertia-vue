@@ -1,8 +1,8 @@
 <template>
-    <app-layout title="الرسائل">
+    <app-layout title="Contacts">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                رسالة من  ({{ contact.name }})
+                Message form ({{ contact.name }})
             </h2>
         </template>
         <div class="justify-center items-center h-full">
@@ -16,17 +16,17 @@
                                         <h6 class="text-blueGray-700 text-xl font-bold">
                                         </h6>
                                         <Link :href="route('contacts.index')">
-                                            <jet-button class="mb-4">عودة</jet-button>
+                                            <jet-button class="mb-4">Back</jet-button>
                                         </Link>
                                     </div>
                                     <table class="min-w-full divide-y divide-gray-200 text-right">
                                         <tbody class="divide-y divide-gray-200">
                                         <tr>
                                             <th scope="col" class="px-3 font-bold bg-gray-50 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                المرسل
+                                                Sender
                                             </th>
                                             <th scope="col" class="px-3 font-bold bg-gray-50 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                عنوان الرسالة
+                                                Title
                                             </th>
                                         </tr>
                                         <tr>
@@ -46,7 +46,7 @@
                                         </tr>
                                         <tr>
                                             <th colspan="2" scope="col" class="px-3 font-bold bg-gray-50 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                المحتوى
+                                                Content
                                             </th>
                                         </tr>
                                         </tbody>

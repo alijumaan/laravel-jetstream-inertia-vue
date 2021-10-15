@@ -2,7 +2,7 @@
     <app-layout title="Buildings">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                انشاء صنف
+                Create new item
             </h2>
         </template>
         <div class="flex justify-center items-center h-full overflow-auto">
@@ -19,7 +19,7 @@
                                                 </h6>
                                                 <Link :href="route('items.index')">
                                                     <jet-button >
-                                                        عودة الى الاصناف
+                                                        Back to items
                                                     </jet-button>
                                                 </Link>
                                             </div>
@@ -28,59 +28,59 @@
                                             <div class="flex flex-wrap -m-2">
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="name" value="التسمية" />
+                                                        <Label for="name" value="Nomenclature" />
                                                         <Input type="text" v-model="form.nomenclature" id="name" name="name" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.nomenclature" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="number" value="المعرف" />
+                                                        <Label for="number" value="SKU" />
                                                         <Input type="text" v-model="form.sku" id="number" name="number" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.sku" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="number" value="رقم التجزئة" />
+                                                        <Label for="number" value="Part number" />
                                                         <Input type="text" v-model="form.part" id="number" name="number" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.part" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="number" value="اللون" />
+                                                        <Label for="number" value="Color" />
                                                         <Input type="text" v-model="form.color" id="number" name="number" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.color" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="number" value="المقاس" />
+                                                        <Label for="number" value="Size" />
                                                         <Input type="text" v-model="form.size" id="number" name="number" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.size" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="number" value="الكمية" />
+                                                        <Label for="number" value="Qty" />
                                                         <Input type="text" v-model="form.quantity" id="number" name="number" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.quantity" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="status" value="الحالة" />
+                                                        <Label for="status" value="Status" />
                                                         <select v-model="form.status" id="status" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full">
-                                                            <option value="0">غير صالح</option>
-                                                            <option value="1">صالح</option>
+                                                            <option value="0">Invalid</option>
+                                                            <option value="1">Valid</option>
                                                         </select>
                                                     </div>
                                                     <jet-input-error :message="form.errors.status" class="mt-2" />
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                                        حفظ
+                                                        Save
                                                     </jet-button>
                                                 </div>
                                             </div>

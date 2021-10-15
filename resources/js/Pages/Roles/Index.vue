@@ -1,8 +1,8 @@
 <template>
-    <app-layout title="الأدوار">
+    <app-layout title="Roles">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                الأدوار
+                Roles
             </h2>
         </template>
 
@@ -23,11 +23,11 @@
                                                 ID
                                             </th>
                                             <th scope="col" class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                الاسم
+                                                Name
                                             </th>
                                             <th></th>
                                             <th class="text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                <span class="">الاجراءات</span>
+                                                <span class="">Actions</span>
                                             </th>
                                         </tr>
                                         </thead>
@@ -47,7 +47,7 @@
                                             </td>
                                         </tr>
                                         <tr v-else>
-                                            <td colspan="4" class="px-6 py-3 text-center">لاتوجد صلاحيات</td>
+                                            <td colspan="4" class="px-6 py-3 text-center">No roles found.</td>
                                         </tr>
                                         </tbody>
                                     </table>

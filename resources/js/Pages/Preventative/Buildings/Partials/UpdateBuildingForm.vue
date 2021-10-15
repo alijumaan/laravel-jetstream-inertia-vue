@@ -6,21 +6,21 @@
 
         <jet-dialog-modal :show="showModal" :max-width="'lg'" @close="closeModal">
             <template #title>
-                تعديل مبنى {{ building.name }}
+                Edit {{ building.name }}
             </template>
 
             <template #content>
-                <small>يرجى التأكد من صحة البيانات المدخلة قبل الحفظ</small>
+                <small>Please make sure that the data entered is correct before saving</small>
 
                 <div class="mt-3">
-                    <jet-input type="text" class="mt-1 block w-full" placeholder="الاسم"
+                    <jet-input type="text" class="mt-1 block w-full" placeholder="Name"
                                ref="name"
                                v-model="form.name" />
                     <jet-input-error :message="form.errors.name" class="mt-2" />
                 </div>
 
                 <div class="mt-3">
-                    <jet-input type="text" class="mt-1 block w-full" placeholder="رقم المبنى"
+                    <jet-input type="text" class="mt-1 block w-full" placeholder="Number"
                                ref="number"
                                v-model="form.number" />
                     <jet-input-error :message="form.errors.number" class="mt-2" />
@@ -28,9 +28,9 @@
 
                 <div v-if="$page.props.is_admin" class="mt-3">
                     <div class="relative">
-                        <jet-label value="المفتش" />
+                        <jet-label value="Inspector" />
                         <select v-model="form.user_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full">
-                            <option value="">المفتش</option>
+                            <option value="">Inspector</option>
                             <option v-for="user in users" :value="user.id">{{ user.name }}</option>
                         </select>
                     </div>
@@ -39,17 +39,17 @@
 
                 <div class="mt-3">
                     <div class="relative">
-                        <jet-label value="الفترة" />
+                        <jet-label value="Period" />
                         <select v-model="form.period_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full">
-                            <option value="">الفترة</option>
-                            <option v-for="period in periods" :value="period.id">{{ period.time_name_arabic }}</option>
+                            <option value="">Period</option>
+                            <option v-for="period in periods" :value="period.id">{{ period.period }}</option>
                         </select>
                     </div>
                     <jet-input-error :message="form.errors.period_id" class="mt-2" />
                 </div>
 
                 <div class="mt-3">
-                    <jet-input type="text" class="mt-1 block w-full" placeholder="ملاحظات"
+                    <jet-input type="text" class="mt-1 block w-full" placeholder="Notes"
                                ref="notes"
                                v-model="form.notes" />
                     <jet-input-error :message="form.errors.notes" class="mt-2" />
@@ -59,11 +59,11 @@
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
-                <jet-button class="mr-2" @click="updateBuilding" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    تعديل
+                <jet-button class="ml-2" @click="updateBuilding" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Update
                 </jet-button>
             </template>
         </jet-dialog-modal>
@@ -121,7 +121,7 @@ export default defineComponent({
                     this.closeModal()
                     Toast.fire({
                         icon: 'success',
-                        title: 'تم تعديل المبنى بنجاح'
+                        title: 'The building updated successfully'
                     })
                 },
                 onError: () => this.$refs.name.focus(),

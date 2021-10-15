@@ -10,17 +10,17 @@
                 <!-- Authentication -->
                 <form method="POST" @submit.prevent="logout">
                     <button class="inline-block text-black hover:text-indigo-500 ml-2" type="submit">
-                        خروج
+                        Logout
                     </button>
                 </form>
             </div>
 
             <template v-else>
                 <Link v-if="canLogin" :href="route('login')" class="inline-block text-black hover:text-indigo-500 ml-2">
-                    الدخول
+                    Login
                 </Link>
                 <Link v-if="canRegister" :href="route('register')" class="inline-block text-black hover:text-indigo-100 ml-2">
-                    التسجيل
+                    Create
                 </Link>
             </template>
         </div>

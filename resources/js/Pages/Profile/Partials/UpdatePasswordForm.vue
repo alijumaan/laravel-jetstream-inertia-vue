@@ -1,28 +1,28 @@
 <template>
     <jet-form-section @submitted="updatePassword">
         <template #title>
-            تغير الرقم السري
+            Change the password
         </template>
 
         <template #description>
-            قم بتحديث معلومات ملف تعريف حسابك والبريد الإلكتروني تأكد من أن حسابك يستخدم كلمة مرور طويلة وعشوائية للبقاء آمنًا.
+            Update your account profile information and email Make sure your account uses a long, random password to stay secure.
         </template>
 
         <template #form>
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="current_password" value="كلمة المرور الحالية" />
+                <jet-label for="current_password" value="Current password" />
                 <jet-input id="current_password" type="password" class="mt-1 block w-full" v-model="form.current_password" ref="current_password" autocomplete="current-password" />
                 <jet-input-error :message="form.errors.current_password" class="mt-2" />
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="password" value="كلمة مرور جديدة" />
+                <jet-label for="password" value="New password" />
                 <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" ref="password" autocomplete="new-password" />
                 <jet-input-error :message="form.errors.password" class="mt-2" />
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <jet-label for="password_confirmation" value="تأكيد كلمة المرور" />
+                <jet-label for="password_confirmation" value="Confirm password" />
                 <jet-input id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" autocomplete="new-password" />
                 <jet-input-error :message="form.errors.password_confirmation" class="mt-2" />
             </div>
@@ -30,11 +30,11 @@
 
         <template #actions>
             <jet-action-message :on="form.recentlySuccessful" class="ml-3">
-                تم الحفظ
+                Done
             </jet-action-message>
 
             <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                حفظ
+                Save
             </jet-button>
         </template>
     </jet-form-section>

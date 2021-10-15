@@ -15,11 +15,11 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        // gets all permissions via Gate::before rule; see AuthServiceProvider
         Role::create(['name' => 'admin']);
         $supervisor = Role::create(['name' => 'supervisor']);
         $supply = Role::create(['name' => 'supply']);
         $inspector = Role::create(['name' => 'inspector']);
+        Role::create(['name' => 'user']);
 
         $supervisorPermissions = [
             'Access preventative',

@@ -2,7 +2,7 @@
     <app-layout title="التموين">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                الاصناف
+                Items
             </h2>
         </template>
         <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -11,7 +11,7 @@
 
                 </h6>
                 <Link :href="route('dashboard')">
-                    <jet-button class="mb-4">الرئيسية</jet-button>
+                    <jet-button class="mb-4">Home</jet-button>
                 </Link>
             </div>
             <div class="flex justify-center items-center h-full overflow-auto">
@@ -25,19 +25,14 @@
                                 </div>
                             </div>
                             <div class="p-4">
-                                <p class="text-white font-semibold" >الأصناف</p>
+                                <p class="text-white font-semibold" >Items</p>
                                 <div class="flex justify-between mt-2">
-                                    <p class="text-gray-200">عدد الاصناف</p>
+                                    <p class="text-gray-200">Items count</p>
                                     <p class="text-white" >1000</p>
                                 </div>
                             </div>
                         </Link>
                     </div>
-                    <!-- end product -->
-
-                    <!-- new section -->
-
-                    <!-- end section -->
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
 <template>
-    <app-layout title="الصلاحيات">
+    <app-layout title="Contacts">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                رسائل التواصل
+                Contacts
             </h2>
         </template>
         <div v-if="!$page.props.is_admin" class="mx-6 my-20">
@@ -11,24 +11,24 @@
                     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                         <form @submit.prevent="saveContact">
                             <div>
-                                <jet-label class="my-3" for="name" value="الاسم" />
+                                <jet-label class="my-3" for="name" value="Name" />
                                 <jet-input id="name" ref="name" type="text" class="mt-1 block w-full" v-model="form.name" autofocus autocomplete="name" />
                                 <jet-input-error :message="form.errors.name" class="mt-2" />
                             </div>
                             <div>
-                                <jet-label class="my-3" for="title" value="عنوان الرسالة" />
+                                <jet-label class="my-3" for="title" value="Title" />
                                 <jet-input id="title" ref="title" type="text" class="mt-1 block w-full" v-model="form.title" autofocus autocomplete="title" />
                                 <jet-input-error :message="form.errors.title" class="mt-2" />
                             </div>
                             <div>
-                                <jet-label class="my-3" for="title" value="عنوان الرسالة" />
+                                <jet-label class="my-3" for="title" value="Content" />
                                 <textarea v-model="form.body" rows="10" class="mt-1 block w-full"></textarea>
                                 <jet-input-error :message="form.errors.body" class="mt-2" />
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
                                 <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                    ارسال
+                                    Send
                                 </jet-button>
                             </div>
                         </form>
@@ -46,19 +46,19 @@
                                     <thead class="bg-gray-50">
                                     <tr>
                                         <th class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            المرسل
+                                            Name
                                         </th>
                                         <th class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            عنوان الرسالة
+                                            Title
                                         </th>
                                         <th class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            الحالة
+                                            Status
                                         </th>
                                         <th class="py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            التاريخ
+                                            Date
                                         </th>
                                         <th class="text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            الاجراء
+                                            Action
                                         </th>
                                     </tr>
                                     </thead>
@@ -78,7 +78,7 @@
                                             {{ contact.title }}
                                         </td>
                                         <td class="whitespace-nowrap text-center text-sm font-medium justify-between">
-                                            <span :class="contact.is_read === 'مقروء'
+                                            <span :class="contact.is_read === 'Read'
                                                     ? 'inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'
                                                     : 'inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800'">
                                                         {{ contact.is_read }}
@@ -92,7 +92,7 @@
                                         </td>
                                     </tr>
                                     <tr v-else>
-                                        <td colspan="4" class="px-6 py-3 text-center">لاتوجد رسائل</td>
+                                        <td colspan="4" class="px-6 py-3 text-center">No messages found.</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -145,7 +145,7 @@ export default defineComponent({
                     this.form.reset()
                     Toast.fire({
                         icon: 'success',
-                        title: 'تم انشاء المبنى بنجاح'
+                        title: 'The building has been created successfully'
                     })
                 },
                 onError: () => this.$refs.name.focus(),

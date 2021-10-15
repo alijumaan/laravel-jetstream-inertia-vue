@@ -3,27 +3,27 @@
         <div class="text-center flex justify-between">
             <span class="text-blueGray-700 text-xl font-bold">
                 <jet-button @click="confirmShow">
-                سحب طفاية
+                    Haul an extinguisher
                 </jet-button>
             </span>
             <Link :href="route('preventatives.index')">
-                <jet-button class="mb-4">عودة</jet-button>
+                <jet-button class="mb-4">Back</jet-button>
             </Link>
         </div>
 
         <jet-dialog-modal :show="showModal" :max-width="'lg'" @close="closeModal">
             <template #title>
-                سحب طفاية حريق من مبنى
+                Haul an extinguisher from a building
             </template>
 
             <template #content>
-                <small>يرجى التأكد من صحة البيانات المدخلة قبل الحفظ</small>
+                <small>Please make sure that the data entered is correct before saving</small>
 
                 <div class="mt-3">
                     <div class="relative">
-                        <jet-label value="الطفاية" />
+                        <jet-label value="Extinguisher" />
                         <select v-model="form.extinguisher_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full">
-                            <option value="">الطفاية</option>
+                            <option value="">Extinguisher</option>
                             <option v-for="extinguisher in extinguishers.data" :value="extinguisher.id">{{ extinguisher.type }}</option>
                         </select>
                     </div>
@@ -31,9 +31,9 @@
                 </div>
                 <div class="mt-3">
                     <div class="relative">
-                        <jet-label value="المبنى" />
+                        <jet-label value="Building" />
                         <select v-model="form.building_id" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full">
-                            <option value="">المبنى</option>
+                            <option value="">Building</option>
                             <option v-for="building in buildings" :value="building.id">{{ building.name }}</option>
                         </select>
                     </div>
@@ -44,11 +44,11 @@
 
             <template #footer>
                 <jet-secondary-button @click="closeModal">
-                    الغاء
+                    Cancel
                 </jet-secondary-button>
 
-                <jet-button class="mr-2" @click="saveBuilding" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    حفظ
+                <jet-button class="ml-2" @click="saveBuilding" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Save
                 </jet-button>
             </template>
         </jet-dialog-modal>
@@ -101,7 +101,7 @@
                         this.closeModal()
                         Toast.fire({
                             icon: 'success',
-                            title: 'تم سحب الطفاية من المبنى بنجاح'
+                            title: 'Done'
                         })
                     },
                 })

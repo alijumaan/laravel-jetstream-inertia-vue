@@ -11,7 +11,7 @@
                         <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex items-center justify-center">
                             <div>
                                 <h3 class="text-center text-white text-lg"></h3>
-                                <h3 class="text-center text-white text-3xl mt-2 font-bold">الوقاية</h3>
+                                <h3 class="text-center text-white text-3xl mt-2 font-bold">Preventive</h3>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                         <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex items-center justify-center">
                             <div>
                                 <h3 class="text-center text-white text-lg"></h3>
-                                <h3 class="text-center text-white text-3xl mt-2 font-bold">التموين</h3>
+                                <h3 class="text-center text-white text-3xl mt-2 font-bold">Supply</h3>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex items-center justify-center">
                             <div>
                                 <h3 class="text-center text-white text-lg"></h3>
-                                <h3 class="text-center text-white text-3xl px-8 mt-2 font-bold">المستخدمين</h3>
+                                <h3 class="text-center text-white text-3xl px-8 mt-2 font-bold">Users</h3>
                             </div>
                         </div>
                     </div>
@@ -64,9 +64,3 @@ export default defineComponent({
     }
 })
 </script>
-
-<style scoped>
-* {
-    direction: rtl;
-}
-</style>

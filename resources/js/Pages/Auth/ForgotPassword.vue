@@ -4,12 +4,12 @@
     <jet-authentication-card>
         <template #logo>
             <Link :href="route('login')" class="text-2xl">
-                عودة إلى تسجيل الدخول
+                Back to login
             </Link>
         </template>
 
         <div class="mb-4 text-sm text-gray-600">
-            نسيت رقمك السري؟ لا مشكلة. فقط أخبرنا بعنوان بريدك الإلكتروني وسنرسل لك رابط إعادة تعيين كلمة المرور عبر البريد الإلكتروني الذي سيسمح لك باختيار عنوان جديد
+            Forgot your password? Not a problem. Just tell us your email address and we will send you a password reset link via email that will allow you to choose a new one
         </div>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
@@ -20,13 +20,13 @@
 
         <form @submit.prevent="submit">
             <div>
-                <jet-label for="email" value="البريد الإلكتروني" />
+                <jet-label for="email" value="Email" />
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus />
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    رابط إعادة تعيين كلمة مرور البريد الإلكتروني
+                    Email Password Reset Link
                 </jet-button>
             </div>
         </form>
