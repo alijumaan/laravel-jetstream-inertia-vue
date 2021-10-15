@@ -16,12 +16,12 @@
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="mr-6 hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('preventatives.index')" :active="route().current('preventatives.index')">
                                     Preventative
                                 </jet-nav-link>
                             </div>
-                            <div v-if="$page.props.is_admin" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <jet-nav-link :href="route('supplies.index')" :active="route().current('supplies.index')">
                                     Supply
                                 </jet-nav-link>

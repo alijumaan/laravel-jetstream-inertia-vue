@@ -1,7 +1,7 @@
 <template>
     <div class="justify-center items-center h-full">
             <div class="px-8 pt-5 text-left flex justify-between">
-                <jet-button onclick="window.print();" class="bg-green-700">طباعة</jet-button>
+                <jet-button onclick="window.print();" class="bg-green-700">Print</jet-button>
                 <Link :href="route('items.index')">
                     <jet-button>Back</jet-button>
                 </Link>

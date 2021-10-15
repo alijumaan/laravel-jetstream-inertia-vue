@@ -1,3 +1,4 @@
+
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Droid Arabic Kufi', ...defaultTheme.fontFamily.sans],
+                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
     },

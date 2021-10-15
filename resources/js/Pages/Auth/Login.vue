@@ -4,9 +4,7 @@
     <Header />
     <jet-authentication-card class="px-8">
         <template #logo>
-            <Link :href="route('dashboard')" class="text-1xl">
-                <jet-button>Back to the home page</jet-button>
-            </Link>
+            <jet-authentication-card-logo />
         </template>
 
         <jet-validation-errors class="mb-4" />

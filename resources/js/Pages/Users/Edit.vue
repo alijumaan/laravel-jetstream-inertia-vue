@@ -2,7 +2,7 @@
     <app-layout title="Users">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                تعديل المستخدم {{ user.name }}
+                Edit {{ user.name }}
             </h2>
         </template>
         <div class="flex justify-center items-center h-full overflow-auto">
@@ -18,7 +18,7 @@
                                                 <h6 class="text-blueGray-700 text-xl font-bold">
                                                 </h6>
                                                 <Link :href="route('users.index')">
-                                                    <jet-button >عودة الى المستخدمين</jet-button>
+                                                    <jet-button >Back to users</jet-button>
                                                 </Link>
                                             </div>
                                         </div>
@@ -26,28 +26,28 @@
                                             <div class="flex flex-wrap -m-2">
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="name" value="الاسم" />
+                                                        <Label for="name" value="Name" />
                                                         <Input type="text" v-model="form.name" id="name" name="name" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.name" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="email" value="الإيميل" />
+                                                        <Label for="email" value="Email" />
                                                         <Input type="email" v-model="form.email" id="email" name="email" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.email" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="username" value="اسم المستخدم" />
+                                                        <Label for="username" value="Username" />
                                                         <Input type="text" v-model="form.username" id="username" name="username" class="mt-1 block w-full " />
                                                         <jet-input-error :message="form.errors.username" class="mt-2" />
                                                     </div>
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <div class="relative">
-                                                        <Label for="role" value="الوظيفة" />
+                                                        <Label for="role" value="Role" />
                                                         <select v-model="form.role" id="role" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full">
                                                             <option v-for="role in roles" :value="role.name">{{ role.name }}</option>
                                                         </select>
@@ -56,7 +56,7 @@
                                                 </div>
                                                 <div class="p-2 w-full">
                                                     <jet-button class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                                        تعديل
+                                                        Update
                                                     </jet-button>
                                                 </div>
                                             </div>

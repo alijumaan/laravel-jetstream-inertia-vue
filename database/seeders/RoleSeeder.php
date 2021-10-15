@@ -19,7 +19,7 @@ class RoleSeeder extends Seeder
         $supervisor = Role::create(['name' => 'supervisor']);
         $supply = Role::create(['name' => 'supply']);
         $inspector = Role::create(['name' => 'inspector']);
-        Role::create(['name' => 'user']);
+        $user = Role::create(['name' => 'user']);
 
         $supervisorPermissions = [
             'Access preventative',
@@ -80,8 +80,22 @@ class RoleSeeder extends Seeder
             'Delete item',
         ];
 
+        $userPermissions = [
+            'Access supply',
+            'Access item',
+            'Access preventative',
+            'Access building',
+            'Access extinguisher',
+            'Show supply',
+            'Show item',
+            'Show preventative',
+            'Show building',
+            'Show extinguisher',
+        ];
+
         $supervisor->givePermissionTo($supervisorPermissions);
         $inspector->givePermissionTo($inspectorPermissions);
         $supply->givePermissionTo($supplyPermissions);
+        $user->givePermissionTo($userPermissions);
     }
 }

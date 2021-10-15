@@ -16,10 +16,10 @@
             </div>
 
             <template v-else>
-                <Link v-if="canLogin" :href="route('login')" class="inline-block text-black hover:text-indigo-500 ml-2">
+                <Link v-if="canLogin" :href="route('login')" class="inline-block text-black hover:text-indigo-500">
                     Login
                 </Link>
-                <Link v-if="canRegister" :href="route('register')" class="inline-block text-black hover:text-indigo-100 ml-2">
+                <Link v-if="canRegister" :href="route('register')" class="inline-block text-black hover:text-indigo-500 ml-3">
                     Create
                 </Link>
             </template>
