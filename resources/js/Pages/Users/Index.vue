@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="users.total > pagination" class="mt-4">
+                <div v-if="users.total > pagination" class="px-3 mt-4">
                     <div class="flex items-center">
                         <template v-for="(link, key) in users.links">
                             <div v-if="link.url === null" :key="key"
@@ -99,41 +99,41 @@
             <div class="mx-3 my-20">
                 <div class="card">
                     <div class="text-center flex justify-between">
-                        <h6 class="mb-4 text-red-900 text-xl font-bold">
+                        <h6 class="px-3 mb-4 text-red-900 text-xl font-bold">
                             Inactive users
                         </h6>
                     </div>
                     <div class="flex flex-col">
-                        <div class="px-3 overflow-x-auto">
-                            <div class="py-2 align-middle inline-block min-w-full">
+                        <div class="overflow-x-auto">
+                            <div class="px-3 py-2 align-middle inline-block min-w-full">
                                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                                     <table class="min-w-full divide-y text-left divide-gray-200">
                                         <thead class="bg-gray-50">
                                         <tr>
-                                            <th scope="col" class="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th scope="col" class="px-3 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 Id, Name & Email
                                             </th>
-                                            <th scope="col" class="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th scope="col" class="px-3 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 Role
                                             </th>
-                                            <th scope="col" class="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th scope="col" class="px-3 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 Created At
                                             </th>
-                                            <th scope="col" class="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            <th scope="col" class="px-3 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 Action
                                             </th>
                                         </tr>
                                         </thead>
                                         <tbody class="bg-white divide-y divide-gray-200">
-                                        <tr v-if="inactiveUsers.data.length > 0" v-for="(user, index) in inactiveUsers.data" :key="user.id">
-                                            <td class="py-2 whitespace-nowrap">
-                                                <div class="pr-2 flex items-center">
+                                        <tr v-if="users.data.length > 0" v-for="(user, index) in inactiveUsers.data" :key="user.id">
+                                            <td class="whitespace-nowrap">
+                                                <div class="flex items-center">
                                                     <div>
-                                                        <div class="text-xs font-medium text-gray-900">
+                                                        <div class="mx-3 text-xs font-medium text-gray-900">
                                                             {{ user.id }} - {{ user.name }} <br>
                                                             <span class="text-red-800">{{ user.username }}</span>
                                                         </div>
-                                                        <div class="text-xs text-gray-500">
+                                                        <div class="mx-3 text-xs text-gray-500">
                                                             {{ user.email }}
                                                         </div>
                                                     </div>
