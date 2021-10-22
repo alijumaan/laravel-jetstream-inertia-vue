@@ -11,6 +11,7 @@ after install the project:
 - npm install
 - npm run dev or watch
 - php artisan serve or use your custom "domain.test"
+- for testing edit phpunit.xml in lines (24, 25)
 
 ## Permission folder ( Linux | Mac)
 - sudo chmod -R 777 storage bootstrap/cache
