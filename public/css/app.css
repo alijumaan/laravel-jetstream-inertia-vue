@@ -1532,6 +1532,9 @@ select {
 .whitespace-nowrap {
 	white-space: nowrap;
 }
+.break-all {
+	word-break: break-all;
+}
 .rounded-md {
 	border-radius: 0.375rem;
 }
@@ -1875,9 +1878,6 @@ select {
 }
 .pt-8 {
 	padding-top: 2rem;
-}
-.pr-2 {
-	padding-right: 0.5rem;
 }
 .pr-3 {
 	padding-right: 0.75rem;

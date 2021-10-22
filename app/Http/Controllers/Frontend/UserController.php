@@ -109,10 +109,10 @@ class UserController extends Controller
 
         $user->update($request->validated());
 
-        if ($user->role !== $request->role) {
+        if ($user->role && $user->role !== $request->role) {
             $user->removeRole($user->role);
-            $user->assignRole($request->role);
         }
+        $user->assignRole($request->role);
 
         return Redirect::route('users.index')
             ->with('success', __('messages.update_successfully'));
