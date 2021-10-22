@@ -25,12 +25,12 @@ class ItemRequest extends FormRequest
     {
         return [
             'nomenclature' => ['required'],
-            'sku' => ['required', 'max:30'],
-            'part' => ['required', 'max:30'],
-            'color' => ['required'],
-            'size' => ['required'],
-            'quantity' => ['required', 'numeric', 'digits_between:2,5'],
-            'status' => ['required'],
+            'sku' => ['nullable', 'max:30'],
+            'part' => ['nullable', 'max:30'],
+            'color' => ['nullable'],
+            'size' => ['nullable'],
+            'quantity' => ['nullable', 'numeric', 'digits_between:2,5'],
+            'status' => ['nullable'],
         ];
     }
 }
