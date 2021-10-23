@@ -31,7 +31,7 @@ class AuthenticationTest extends TestCase
         $response->assertRedirect('/login');
     }
 
-    public function test_is_admin_middleware_is_working()
+    public function test_admin_middleware_is_working()
     {
         $user = User::factory()->create();
         Role::create(['name' => 'admin']);
@@ -56,6 +56,7 @@ class AuthenticationTest extends TestCase
         $response = $this->actingAs($user)->get(route('login'));
 
         $this->assertAuthenticated();
+
         $response->assertRedirect(RouteServiceProvider::HOME);
     }
 

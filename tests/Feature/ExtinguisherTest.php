@@ -8,6 +8,7 @@ use App\Models\Extinguisher;
 use App\Models\Period;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Tests\TestCase;
 
@@ -15,7 +16,7 @@ class ExtinguisherTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_extinguisher_crud_is_working()
+    public function test_extinguisher_crud_by_admin_is_working()
     {
         Role::create(['name' => 'admin']);
         $user = User::factory()->create();
@@ -39,7 +40,7 @@ class ExtinguisherTest extends TestCase
         $this->assertSoftDeleted(Extinguisher::class, ['type' => 'foam']);
     }
 
-    public function test_pull_extinguisher_from_building()
+    public function test_pull_extinguisher_from_building_by_admin()
     {
         Role::create(['name' => 'admin']);
         $user = User::factory()->create();
@@ -63,7 +64,7 @@ class ExtinguisherTest extends TestCase
         $response->assertRedirect('preventatives/extinguishers');
     }
 
-    public function test_return_extinguisher_to_building()
+    public function test_return_extinguisher_to_building_by_admin()
     {
         Role::create(['name' => 'admin']);
         $user = User::factory()->create();
@@ -90,5 +91,42 @@ class ExtinguisherTest extends TestCase
         $response->assertRedirect('preventatives/extinguishers');
 
         $this->assertDatabaseMissing(BuildingExtinguisher::class, ['extinguisher_id' => $extinguisher->id]);
+    }
+
+    public function test_inspector_role_can_create_and_update_extinguisher()
+    {
+        $permissions = [
+            'Access extinguisher',
+            'Create extinguisher',
+            'Edit extinguisher',
+        ];
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
+        }
+
+        $role = Role::create(['name' => 'inspector']);
+        $role->givePermissionTo($permissions);
+
+        $user = User::factory()->create();
+        $user->assignRole('inspector');
+
+        $extinguisher = Extinguisher::create(['type' => 'water', 'slug' => 'water']);
+
+        $response = $this->actingAs($user)->get('/preventatives/extinguishers');
+        $response->assertOk();
+
+        $extinguisher->update(['type' => 'foam', 'slug' => 'foam']);
+
+        $response = $this->actingAs($user)->get('/preventatives/extinguishers');
+        $response->assertOk();
+    }
+
+    public function test_users_can_not_access_extinguisher_page()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('preventatives/extinguishers');
+
+        $response->assertStatus(403);
     }
 }

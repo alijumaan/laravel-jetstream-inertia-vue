@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\PermissionRegistrar;
 use Tests\TestCase;
 
 class PermissionTest extends TestCase
@@ -22,10 +23,13 @@ class PermissionTest extends TestCase
         $response = $this->actingAs($admin)->get('permissions');
         $response->assertOk();
 
-        $response = $this->actingAs($admin)->post('permissions', ['name' => 'Access user']);
+        $permission = Permission::create([
+            'name' => 'Access user'
+        ]);
+        $response = $this->actingAs($admin)->post('permissions', ['name' => $permission->name]);
         $response->assertRedirect('permissions');
 
-        $permission = Permission::find(1)->first();
+        $permission = Permission::find($permission->id)->first();
         $response = $this->actingAs($admin)->put('permissions/' . $permission->id, ['name' => 'Update user']);
         $response->assertRedirect('permissions');
 
