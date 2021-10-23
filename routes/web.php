@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
     });
 
     # permissions
-    Route::resource('permissions', PermissionController::class)->except('show');
+    Route::resource('permissions', PermissionController::class)->except('create', 'show');
 
     # roles
     Route::resource('roles', RoleController::class)->except('show', 'edit', 'create');

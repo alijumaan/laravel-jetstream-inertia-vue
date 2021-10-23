@@ -43,13 +43,6 @@ class PermissionController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        $this->authorize('create_permission');
-
-        return Inertia::render('Permissions/Create');
-    }
-
     public function store(PermissionRequest $request)
     {
         $this->authorize('create_permission');
@@ -57,15 +50,6 @@ class PermissionController extends Controller
         Permission::create($request->validated());
 
         return Redirect::route('permissions.index');
-    }
-
-    public function edit(Permission $permission): Response
-    {
-        $this->authorize('edit_permission');
-
-        return Inertia::render('Permissions/Edit', [
-            'permission' => $permission
-        ]);
     }
 
     public function update(Permission $permission, PermissionRequest $request)

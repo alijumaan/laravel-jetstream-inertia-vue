@@ -22663,6 +22663,8 @@ __webpack_require__.r(__webpack_exports__);
             icon: 'success',
             title: 'The role updated successfully'
           });
+
+          _this2.$inertia.get('roles');
         },
         onError: function onError() {
           return _this2.$refs.name.focus();

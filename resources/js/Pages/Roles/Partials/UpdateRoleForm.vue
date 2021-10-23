@@ -93,6 +93,7 @@ export default defineComponent({
                         icon: 'success',
                         title: 'The role updated successfully'
                     })
+                    this.$inertia.get('roles');
                 },
                 onError: () => this.$refs.name.focus(),
             })
