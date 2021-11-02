@@ -22,7 +22,7 @@ class BuildingController extends Controller
             'page' => ['numeric', 'min:1', 'max:1000']
         ]);
 
-        $pagination = 10;
+        $buildingsLimit = 10;
         $page = 1;
         $userId = auth()->id();
 
@@ -34,44 +34,41 @@ class BuildingController extends Controller
         $buildings = Cache::get($key);
 
         if (auth()->user()->hasRole('admin')) {
-            $buildings = Building::with('user')
-                ->select(['id', 'slug', 'name', 'status', 'number', 'checked_at', 'updated_at'])
+            $buildings = Building::select(['slug', 'name', 'number', 'checked_at', 'updated_at'])
                 ->when($request->keyword, function ($query, $keyword) {
                     $query->where('name', 'LIKE', '%'.$keyword.'%');
                 })
                 ->orderBy('status')
                 ->orderBy('checked_at')
-                ->paginate($pagination);
+                ->paginate($buildingsLimit);
         }
 
         if (auth()->user()->hasRole('supervisor')) {
-            $buildings = Building::with('user')
-                ->select(['id', 'slug', 'name', 'status', 'number', 'checked_at', 'updated_at'])
-                ->whereStatus(1)
+            $buildings = Building::select(['slug', 'name', 'number', 'checked_at', 'updated_at'])
+                ->where('checked_at', '>', now())
                 ->when($request->keyword, function ($query, $keyword) {
                     $query->where('name', 'LIKE', '%'.$keyword.'%');
                 })
                 ->orderBy('status')
                 ->orderBy('checked_at')
-                ->paginate($pagination);
+                ->paginate($buildingsLimit);
         }
 
         if (!$buildings) {
-            $buildings = Building::with('user')
-                ->select(['id', 'slug', 'name', 'status', 'number', 'checked_at', 'updated_at'])
+            $buildings = Building::select(['slug', 'name', 'number', 'checked_at', 'updated_at'])
                 ->when($request->keyword, function ($query, $keyword) {
                     $query->where('name', 'LIKE', '%'.$keyword.'%');
                 })
                 ->where('user_id', $userId)
                 ->orderBy('status')
                 ->orderBy('checked_at')
-                ->paginate($pagination);
+                ->paginate($buildingsLimit);
             Cache::forever($key, $buildings);
         }
 
         return Inertia::render('Preventative/Buildings/Index', [
             'buildings' => $buildings,
-            'pagination' => $pagination,
+            'buildingsLimit' => $buildingsLimit,
             'periods' => (new BuildingService())->getPeriodsFromSession(),
             'users' => (new BuildingService())->getUsersFromSession()
         ]);

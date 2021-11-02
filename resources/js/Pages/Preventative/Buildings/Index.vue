@@ -96,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-if="buildings.total > pagination" class="mt-4">
+                <div v-if="buildings.total > buildingsLimit" class="mt-4">
                     <div class="flex items-center">
                         <template v-for="(link, key) in buildings.links">
                             <div v-if="link.url === null" :key="key"
@@ -136,7 +136,7 @@
             buildings: Object,
             periods: Object,
             users: Object,
-            pagination: Number
+            buildingsLimit: Number
         },
         data() {
             return {

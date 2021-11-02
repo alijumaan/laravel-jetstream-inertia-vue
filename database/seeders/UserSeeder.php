@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
             'name' => 'supervisor',
             'username' => 'supervisor',
             'email' => 'supervisor@supervisor.com',
-            'password' => bcrypt('123456'),
+            'password' => bcrypt('password'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ]);
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
             'username' => 'inspector',
             'email' => 'inspector@inspector.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('123456'),
+            'password' => bcrypt('password'),
         ]);
 
         $supply = User::create([
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'username' => 'supply',
             'email' => 'supply@supply.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('123456'),
+            'password' => bcrypt('password'),
         ]);
 
         $admin->assignRole('admin');

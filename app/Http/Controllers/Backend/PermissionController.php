@@ -13,7 +13,7 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
         $this->authorize('access_permission');
 

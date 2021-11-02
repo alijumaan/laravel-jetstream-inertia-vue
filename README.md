@@ -1,7 +1,6 @@
-## Laravel with Inertia & Vue3 Project
+## Laravel with Inertia & Vue3 Project.
 
-## installation :
-after install the project:
+## Installation :
 - composer install
 - cp .env.example .env
 - create new database
@@ -9,12 +8,8 @@ after install the project:
 - php artisan storage:link
 - php artisan migrate --seed
 - npm install
-- npm run dev or watch
-- php artisan serve or use your custom "domain.test"
-- for testing edit phpunit.xml in lines (24, 25)
+- npm run dev or run watch
+- php artisan serve"
 
-## Permission folder ( Linux | Mac)
-- sudo chmod -R 777 storage bootstrap/cache
-
-## Have something or needs help? please, contact me
-<a href='https://alialqahtani.sa' target="_blank">Ali Al-Qahtani</a>
+### For testing:
+- In my case, I use MySQL with a new database if you use another one change it in the phpunit.xml line(24 - 25).
